@@ -1,8 +1,10 @@
 # mount point   device                  fstype          flags
-/system_image           emmc    /dev/block/mapper/system       flags=display="System image";flashimg=1;wipeingui;backup=1
-/vendor_image           emmc    /dev/block/mapper/vendor       flags=display="Vendor image";flashimg=1;wipeingui;backup=1
+/system_image           emmc    /dev/block/mapper/system       flags=display="System image";flashimg=1;backup=1
+/vendor_image           emmc    /dev/block/mapper/vendor       flags=display="Vendor image";flashimg=1;backup=1
 /product_image          emmc    /dev/block/mapper/product      flags=display="Product image";flashimg=1;backup=1
 /system_ext_image       ext4    /dev/block/mapper/system_ext          flags=display="System_Ext image";flashimg=1;backup=1
+/system_image           ext4    /dev/block/mapper/system       flags=display="System image";wipeingui;backup=1
+/vendor_image           ext4    /dev/block/mapper/vendor       flags=display="Vendor image";wipeingui;backup=1
 
 
 
