@@ -70,7 +70,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_VERSION="R12.1"
 	export FOX_BUILD_TYPE="Stable"
 	export OF_MAINTAINER="ismasrull"
-	
+	export OF_MAINTAINER_AVATAR=""
 
 	# OTA
 	export OF_KEEP_DM_VERITY=1
