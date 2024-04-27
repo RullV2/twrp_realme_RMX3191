@@ -60,7 +60,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_TAR_BINARY=1
 	export FOX_USE_SED_BINARY=1
 	export FOX_USE_XZ_UTILS=1
-	export OF_QUICK_BACKUP_LIST="/boot;/data;"
+	export OF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;/super;"
 	export OF_PATCH_AVB20=1
 	export FOX_DELETE_AROMAFM=1
 	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1546300800"; # Tuesday, January 1, 2019 12:00:00 AM GMT+00:00
@@ -68,10 +68,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
 	# R11.1 Settings
 	export FOX_VERSION="R12.1"
-	export FOX_BUILD_TYPE="Stable"
+	export FOX_BUILD_TYPE="Beta"
 	export OF_MAINTAINER="ismasrull"
-	# export OF_MAINTAINER_AVATAR="$(DEVICE_PATH)/maintainer_icon.jpg"
-
+	export OF_MAINTAINER_AVATAR="$PWD/device/realme/RMX3191/maintainer.png"
 	# OTA
 	export OF_KEEP_DM_VERITY=1
 	export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
