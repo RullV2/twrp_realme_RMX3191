@@ -15,11 +15,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# Release name
-PRODUCT_RELEASE_NAME := rmx3191
-
-# Extra VNDK Versions
-PRODUCT_EXTRA_VNDK_VERSIONS := 30
 
 
 # Inherit from those products. Most specific first.
@@ -32,19 +27,21 @@ $(call inherit-product, vendor/pb/config/common.mk)
 PRODUCT_DEVICE := RMX3191
 PRODUCT_NAME := pb_RMX3191
 PRODUCT_BRAND := realme
-PRODUCT_MODEL := RMX3191
+PRODUCT_MODEL := Realme c25
 PRODUCT_MANUFACTURER := realme
-
-# PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Dynamic
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # fastbootd
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mock
+    android.hardware.fastboot@1.0-impl-mock \
+    fastbootd
 
 # Bypass anti-rollback ROMs protection
 # Set build date to Jan 1 2009 00:00:00
 PRODUCT_PROPERTY_OVERRIDES += \
 #    ro.build.date.utc=1230768000
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \
+    ro.product.device \
+    ro.product.name
