@@ -171,12 +171,6 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
-##################################
-# PBRP stuffs - specific configs #
-##################################
-PB_TORCH_PATH := "/sys/class/leds/led:torch_0"
-PB_DISABLE_DEFAULT_DM_VERITY := true
-
 
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
