@@ -21,25 +21,20 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/pb/config/common.mk)
 
+# Inherit from spaced device
+$(call inherit-product, device/realme/RMX3191/device.mk)
+
+
 PRODUCT_DEVICE := RMX3191
-PRODUCT_NAME := pb_RMX3191
+PRODUCT_NAME := omni_RMX3191
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := Realme c25
 PRODUCT_MANUFACTURER := realme
 
-# Dynamic
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
-# fastbootd
-PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mock \
-    fastbootd
-
-# Bypass anti-rollback ROMs protection
-# Set build date to Jan 1 2009 00:00:00
-PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \
-    ro.product.device \
-    ro.product.name
+# HACK: Set vendor patch level
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.bootimage.build.date.utc=0
